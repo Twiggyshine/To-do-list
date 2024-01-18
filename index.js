@@ -1,5 +1,30 @@
 const root = document.getElementById('root')
 
+const createElement = (tagName, className) => {
+    const element = document.createElement(tagName);
+    element.className = className;
+    return element;
+}
+
+const createElementButton = (type, textContent, ...classes) => {
+    const button = createElementWithText('button', 'button', textContent);
+    button.classList.add(classes);
+    button.type = type;
+    return button;
+}
+
+const createElementCheckbox = (type, checked) => {
+    const element = createElement('input', 'checkbox');
+    element.type = type;
+    element.checked = checked;
+    return element;
+}
+
+const createElementWithText = (tagName, className, textContent) => {
+    const element = createElement(tagName, className);
+    element.textContent = textContent;
+    return element;
+}
 
 const wrapper = document.createElement('div')
 const form = document.createElement('div')
@@ -26,44 +51,31 @@ deleteTasks.type  = 'button'
 deleteTasks.textContent = 'Delete All'
 header.prepend(deleteTasks)
 
-const tasksSection = document.createElement('section')
-tasksSection.className = 'tasks-section'
-form.append(tasksSection)
+const createSection = () => {
+    const tasksSection = createElement('section', 'tasks-section');
 
-const headerSection = document.createElement('div')
-headerSection.className = 'header-section'
-tasksSection.append(headerSection)
+    const headerSection = createElement('div', 'header-section')
+    tasksSection.append(headerSection)
 
-const closeTask = document.createElement('button')
-closeTask.className = 'button'
-closeTask.classList.add('close-button')
-closeTask.type  = 'button'
-closeTask.textContent = '✕'
-headerSection.append(closeTask)
+    const closeTask = createElementButton('button', '✕', 'close-button');
+    headerSection.append(closeTask);
 
-const centerSection = document.createElement('div')
-centerSection.className = 'center-section'
-tasksSection.append(centerSection)
+    const centerSection = createElement('div', 'center-section');
+    tasksSection.append(centerSection);
 
-const addTask = document.createElement('input')
-addTask.type = 'checkbox'
-addTask.className = 'checkbox'
-centerSection.append(addTask)
+    const addTask = createElementCheckbox('checkbox', true);
+    centerSection.append(addTask);
 
+    const toDoText = createElementWithText('div', 'to-do-text', 'To Do text');
+    toDoText.id = "id";
+    centerSection.append(toDoText);
 
-const toDoText = document.createElement('div')
-toDoText.className = 'to-do-text'
-toDoText.textContent = 'To Do text'
-centerSection.append(toDoText)
+    const date = createElementWithText('span', 'dateTime', '14.01.2024');
+    tasksSection.append(date);
 
+    return tasksSection;
+}
 
-const date = document.createElement('time')
-date.textContent = '14.01.2024'
-date.className = 'dateTime'
-tasksSection.append(date)
-
-
-
-
-
-
+form.append(createSection());
+form.append(createSection());
+form.append(createSection());

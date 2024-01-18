@@ -26,7 +26,7 @@ header {
 }
 .form {
     width: 450px;
-    height: 300px;
+    height: 600px;
     background-color: rgb(224, 221, 221);
     border-radius: 20px;
     border: 2px solid black;
@@ -43,11 +43,10 @@ header {
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
 }
 
 .close-button {
-    height: 30px;
-    width: 30px;
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -64,22 +63,15 @@ header {
     margin-bottom: 10px;
 
 }
-.dateTime {
-    font-size: 14px;
-}
-
 .center-section {
     display: flex;
     justify-content: space-between;
     
 }
-.header-section {
-    display: flex;
-    justify-content: end;
-}
 .dateTime {
     display: flex;
     justify-content: end;
+    font-size: 14px;
 }
 .checkbox {
     height: 30px;
@@ -89,4 +81,8 @@ header {
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
     border-radius: 10px;
     cursor: pointer;
+}
+.header-section {
+    display: flex;
+    justify-content: end;
 }
