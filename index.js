@@ -1,5 +1,32 @@
 const root = document.getElementById('root')
 
+const wrapper = document.createElement('div')
+const form = document.createElement('div')
+form.classList = 'form'
+root.append(form)
+
+const header = document.createElement('header')
+header.className = 'header'
+form.prepend(header)
+
+const addTasks = document.createElement('button')
+addTasks.className = 'button'
+addTasks.type  = 'submit'
+addTasks.textContent = 'Add Task'
+header.prepend(addTasks)
+
+const input = document.createElement('input')
+input.placeholder = 'Enter todo'
+input.type = 'text'
+input.classList.add('main-input')
+header.prepend(input)
+
+const deleteTasks = document.createElement('button')
+deleteTasks.className = 'button'
+deleteTasks.type  = 'reset'
+deleteTasks.textContent = 'Delete All'
+header.prepend(deleteTasks)
+
 const createElement = (tagName, className) => {
     const element = document.createElement(tagName);
     element.className = className;
@@ -26,35 +53,10 @@ const createElementWithText = (tagName, className, textContent) => {
     return element;
 }
 
-const wrapper = document.createElement('div')
-const form = document.createElement('div')
-form.classList = 'form'
-root.append(form)
-
-const header = document.createElement('header')
-form.prepend(header)
-
-const addTasks = document.createElement('button')
-addTasks.className = 'button'
-addTasks.type  = 'button'
-addTasks.textContent = 'Add Task'
-header.prepend(addTasks)
-
-const input = document.createElement('input')
-input.placeholder = 'Enter todo'
-input.classList.add('main-input')
-header.prepend(input)
-
-const deleteTasks = document.createElement('button')
-deleteTasks.className = 'button'
-deleteTasks.type  = 'button'
-deleteTasks.textContent = 'Delete All'
-header.prepend(deleteTasks)
-
 const createSection = () => {
     const tasksSection = createElement('section', 'tasks-section');
 
-    const headerSection = createElement('div', 'header-section')
+    const headerSection = createElement('div', 'header-section');
     tasksSection.append(headerSection)
 
     const closeTask = createElementButton('button', '✕', 'close-button');
@@ -63,19 +65,66 @@ const createSection = () => {
     const centerSection = createElement('div', 'center-section');
     tasksSection.append(centerSection);
 
-    const addTask = createElementCheckbox('checkbox', true);
+    const addTask = createElementCheckbox('checkbox', false);
     centerSection.append(addTask);
 
-    const toDoText = createElementWithText('div', 'to-do-text', 'To Do text');
+    const toDoText = createElementWithText('div', 'toDoText', 'Learn JS');
     toDoText.id = "id";
     centerSection.append(toDoText);
 
-    const date = createElementWithText('span', 'dateTime', '14.01.2024');
+    const date = createElementWithText('span', 'dateTime', '2022.02.22 22:22:22');
     tasksSection.append(date);
 
     return tasksSection;
 }
 
-form.append(createSection());
-form.append(createSection());
-form.append(createSection());
+let date = new Date().toLocaleTimeString()
+
+
+
+
+
+
+
+
+
+
+
+// кнопка addTask
+
+addTasks.addEventListener('click', (event) => {
+    const addItem = createSection()
+    form.append(addItem)
+})
+
+// кнопка DeleteAll
+
+deleteTasks.addEventListener('click', (event) => {
+    confirm('Уверены,что хотите удалить все задания?')
+    for (step = 0;; step++) {
+        document.querySelector('.tasks-section').remove()
+    }
+})
+
+
+
+
+const tasks = []
+
+header.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const inputValue = "learn JS";
+
+    const task = {
+    id:self.crypto.randomUUID(),
+    task: inputValue,
+    isCompleted: true,
+    date: new Date().toLocaleTimeString()
+}
+    tasks.push(task)
+    tasks.forEach(task => {
+    const taskItem = createSection()
+    form.append(taskItem)
+})
+event.target.reset();
+})                        //вообще не поняла, как это должно работать и работает ли на headerе
