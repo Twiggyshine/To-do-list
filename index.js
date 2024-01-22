@@ -127,4 +127,4 @@ header.addEventListener('submit', (event) => {
     form.append(taskItem)
 })
 event.target.reset();
-})                        //вообще не поняла, как это должно работать и работает ли на headerе
+})                        //вообще не поняла, как это должно работать и работает ли на header
