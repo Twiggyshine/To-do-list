@@ -1,6 +1,8 @@
+
 body {
     background-color: rgb(241, 241, 232);
     margin: 100px auto;
+
 }
 .button {
     background-color: #d37d99;
@@ -9,9 +11,11 @@ body {
     border-radius: 5px;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
     cursor: pointer;
+
 }
 
-header {
+
+form {
     display: flex;
     justify-content: space-between;
 }
@@ -24,7 +28,7 @@ header {
     margin-bottom: 30px;
 
 }
-.form {
+.block {
     width: 450px;
     height: 600px;
     background-color: rgb(224, 221, 221);
@@ -33,7 +37,10 @@ header {
     margin: 0 auto;
     text-align: center;
     padding: 30px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
+
 .tasks-section {
     width: 350px;
     height:100px;
@@ -50,11 +57,13 @@ header {
     margin-bottom: 10px;
     font-weight: bold;
 }
-.to-do-text{
+.toDoText{
     font-size: 20px;
-    color: gray;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-weight: 400;
+    color: grey;
     text-align: center;
-    height: 30px;
+    height: 35px;
     width: 300px;
     background-color: azure;
     border: 1px solid black;
@@ -66,7 +75,7 @@ header {
 .center-section {
     display: flex;
     justify-content: space-between;
-    
+
 }
 .dateTime {
     display: flex;
@@ -86,3 +95,14 @@ header {
     display: flex;
     justify-content: end;
 }
+.del {
+    text-decoration: line-through;
+	text-decoration-color:#d37d99;
+    background-color:  rgb(247, 246, 238);
+}
+
+/* input[type=checkbox]:checked+div {
+    text-decoration: double line-through;
+	text-decoration-color:#d37d99;
+    background-color: rgb(247, 246, 238);
+  } */
