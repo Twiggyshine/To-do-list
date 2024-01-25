@@ -123,13 +123,6 @@ function createCloseButtonListener(closeTask) {
 
 
 
-function createCheckboxListener(acceptTask) {
-    acceptTask.addEventListener('change', (event) => {
-        if (event.target.checked === true) {
-            document.querySelector('.toDoText').classList.add('del')
-        }
-    })
-}
 
 
 

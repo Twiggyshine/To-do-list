@@ -101,8 +101,8 @@ form {
     background-color:  rgb(247, 246, 238);
 }
 
-/* input[type=checkbox]:checked+div {
+    input[type=checkbox]:checked+div {
     text-decoration: double line-through;
 	text-decoration-color:#d37d99;
     background-color: rgb(247, 246, 238);
-  } */
+  }
