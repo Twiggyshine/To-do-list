@@ -91,6 +91,7 @@ deleteTasks.addEventListener('click', (event) => {
     for (i = 0; i < tasks.length; i++) {
         document.querySelector('.tasks-section').remove()
     }
+    tasks.length = 0
 })
 
 // добавление элементов
