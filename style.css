@@ -2,7 +2,7 @@
 body {
     background-color: rgb(241, 241, 232);
     margin: 100px auto;
-
+    
 }
 .button {
     background-color: #d37d99;
@@ -11,7 +11,7 @@ body {
     border-radius: 5px;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
     cursor: pointer;
-
+    
 }
 
 
@@ -38,7 +38,7 @@ form {
     text-align: center;
     padding: 30px;
     overflow-y: auto;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;   
 }
 
 .tasks-section {
@@ -75,7 +75,7 @@ form {
 .center-section {
     display: flex;
     justify-content: space-between;
-
+    
 }
 .dateTime {
     display: flex;
@@ -101,7 +101,7 @@ form {
     background-color:  rgb(247, 246, 238);
 }
 
-    input[type=checkbox]:checked+div {
+input[type=checkbox]:checked+div {
     text-decoration: double line-through;
 	text-decoration-color:#d37d99;
     background-color: rgb(247, 246, 238);
